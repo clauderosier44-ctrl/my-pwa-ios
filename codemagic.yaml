@@ -1,0 +1,15 @@
+workflows:
+  ios-pwa-workflow:
+    name: iOS PWA Build
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    environment:
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Say Hello
+        script: |
+          echo "Starting PWABuilder iOS compilation..."
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - *.ipa
